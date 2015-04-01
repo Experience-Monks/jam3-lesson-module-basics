@@ -1,0 +1,51 @@
+{
+  "name": "jam3-lesson-module-basics",
+  "version": "1.0.0",
+  "description": "intro to Node modules for frontend development",
+  "main": "index.js",
+  "license": "MIT",
+  "author": {
+    "name": "Matt DesLauriers",
+    "email": "dave.des@gmail.com",
+    "url": "https://github.com/mattdesl"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "node test.js"
+  },
+  "keywords": [
+    "module",
+    "frontend",
+    "modules",
+    "front",
+    "end",
+    "front-end",
+    "modular",
+    "code",
+    "javascript",
+    "java",
+    "script",
+    "lesson",
+    "help",
+    "guide",
+    "tutorial",
+    "article",
+    "intro",
+    "introduction",
+    "basic",
+    "basics",
+    "semantic",
+    "versioning",
+    "npm",
+    "browserify"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Jam3/jam3-lesson-module-basics.git"
+  },
+  "homepage": "https://github.com/Jam3/jam3-lesson-module-basics",
+  "bugs": {
+    "url": "https://github.com/Jam3/jam3-lesson-module-basics/issues"
+  }
+}
