@@ -11,6 +11,11 @@
   },
   "dependencies": {},
   "devDependencies": {},
+  "files": [
+    "README.md",
+    "LICENSE.md",
+    "package.json"
+  ],
   "scripts": {
     "test": "node test.js"
   },
