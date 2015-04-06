@@ -63,7 +63,7 @@ Modules typically start at version `1.0.0`. When you bump one number, you must r
 - adding a new feature to `1.0.1` -> `1.1.0` (minor change)
 - changing a method name in `1.1.0` -> `2.0.0` (major change)
 
-When we install a module, we are also opting in for all of its `patch` and `minor` versions within the same `major` version. This way, we get the latest bug fixes, but our code won't break if a dependency decides to change its API. 
+When we install a module, we are also opting in for all of its `patch` and `minor` versions within the same `major` version. This way, we get the latest bug fixes, but our code won't break if a dependency decides to change its API. Later, we will explore how to configure this option and "lock down" our application's dependencies.
 
 # <a id="tools" href="#tools">#</a> tools
 
@@ -121,13 +121,19 @@ npm -v
 
 <sup>(if that doesn't work, you may need to re-install Node and npm [via homebrew](http://shapeshed.com/setting-up-nodejs-and-npm-on-mac-osx/))</sup>
 
+Node bundles with a very outdated version of npm, so it's best to update it to get the latest features and security fixes:
+
+```sh
+sudo npm install npm -g
+```
+
 Let's try installing our first module: [http-server](https://www.npmjs.com/package/http-server). This helps us get a static site up quickly without a bloated GUI tool like MAMP. 
 
 ```sh
 npm install http-server -g
 ```
 
-<sup>*Note:* The `-g` flag tells npm to install it globally.</sup>
+<sup>*Note:* The `-g` flag tells npm to install the module globally.</sup>
 
 If you get an `EACCESS` error, you need to fix your permissions:
 
@@ -150,7 +156,7 @@ Awesome! You just used your first module. This one is a command line tool, which
 
 To bridge the gap between Node/npm and the browser, we will use a tool called [browserify](https://github.com/substack/node-browserify). It transforms Node `require()` statements into something the browser can execute, and bundles different modules into a single script. This allows us to use built-in Node modules like [url](https://nodejs.org/api/url.html), as well as modules on [npm](https://www.npmjs.com/). 
 
-Close the earlier process (`Control + C`), and then stub out a folder where we can write some demos:
+Close the earlier process (`Control + C`), and then stub out a folder where we can write some demos. In Linux/OSX shell:
 
 ```sh
 #go to your projects folder
@@ -166,7 +172,14 @@ cd test-browserify
 touch index.js
 ```
 
-<sup>*Note:* On Windows you might use `%HOMEPATH%/Documents` instead.</sup>
+On Windows, it might look like this:
+
+```sh
+cd `%HOMEPATH%/Documents`
+mkdir test-browserify
+cd test-browserify
+type NUL > index.js
+```
 
 ### basics
 
@@ -244,6 +257,8 @@ This article only covers the basics of Node, npm, and getting modules working in
 
 - [Module Best Practices](https://github.com/mattdesl/module-best-practices)
 - [Browserify Help](http://browserify.org/articles.html)
+- [browserify-adventure](https://github.com/substack/browserify-adventure)
 - [npm docs](https://docs.npmjs.com/)
+- [how-to-npm](https://github.com/npm/how-to-npm)
 - [Node.js API docs](https://nodejs.org/api/)
 - [Rapid Prototyping in JavaScript](http://mattdesl.svbtle.com/rapid-prototyping)
