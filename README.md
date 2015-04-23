@@ -1,6 +1,6 @@
 # Modules for Frontend JavaScript
 
-This is a brief intro to modules for modern frontend development. It will introduce Node, npm, and browserify.
+This is a brief intro to modules for modern frontend development. It will introduce Node, npm, and browserify. After this guide, you should be equipped to [create your first npm module](https://github.com/Jam3/jam3-lesson-module-creation).
 
 # <a id="sections" href="#sections">#</a> sections
 
@@ -255,6 +255,7 @@ And now, when we refresh our `http://localhost:9966/` page, we will see a sweet 
 
 This article only covers the basics of Node, npm, and getting modules working in the browser. A future lesson will go into more depth on the `require()` statement, and how we can build and publish our own modules. Until then, check out some of these links:
 
+- [Creating your first module](https://github.com/Jam3/jam3-lesson-module-creation)
 - [Module Best Practices](https://github.com/mattdesl/module-best-practices)
 - [Browserify Help](http://browserify.org/articles.html)
 - [browserify-adventure](https://github.com/substack/browserify-adventure)
