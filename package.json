@@ -1,6 +1,6 @@
 {
   "name": "jam3-lesson-module-basics",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "intro to Node modules for frontend development",
   "main": "index.js",
   "license": "MIT",
