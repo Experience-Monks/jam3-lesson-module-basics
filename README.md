@@ -1,3 +1,7 @@
+##### [jam3-lesson](https://github.com/Jam3/jam3-lesson) » module-basics
+
+---
+
 # Modules for Frontend JavaScript
 
 This is a brief intro to modules for modern frontend development. It will introduce Node, npm, and browserify. After this guide, you should be equipped to [create your first npm module](https://github.com/Jam3/jam3-lesson-module-creation).
