@@ -196,16 +196,16 @@ var parts = url.parse(window.location.href);
 console.log(parts);
 ```
 
-The above code won't work yet in the browser, since it uses Node APIs. For our demo, we will use [wzrd](https://github.com/substack/wzrd) to transform our Node `require()` statements into something the browser can understand. Install both tools like so:
+The above code won't work yet in the browser, since it uses Node APIs. For our demo, we will use a tool called [budō](https://github.com/mattdesl/budo) to transform our Node `require()` statements into something the browser can understand. Install the tool like so:
 
 ```sh
-npm install wzrd browserify -g
+npm install budo -g
 ``` 
 
-Now start `wzrd` on our source file, like so:
+Now start `budo` on our source file, like so:
 
 ```sh
-wzrd index.js
+budo index.js
 ```
 
 This will start a browserify development server on port `9966`. When `index.js` is requested, it will get "browserified" and transformed into something the browser can run. It will also serve you a basic `index.html` if you didn't write one, with a `<script>` tag for our `index.js`.
