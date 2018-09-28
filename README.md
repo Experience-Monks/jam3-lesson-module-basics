@@ -9,15 +9,27 @@ This is a brief intro to modules for modern frontend development. It will introd
 # <a id="sections" href="#sections">#</a> sections
 
 - [concepts](#concepts)
+
   - [modules](#modules)
+
   - [dependencies](#dependencies)
+
   - [semantic versioning](#semantic-versioning)
+
 - [tools](#tools)
+
   - [node](#node)
+
   - [npm](#npm)
+
   - [browserify](#browserify)
+
     - [basics](#basics)
+
     - [local modules](#local-modules)
+
+- [other tools](#other-tools)
+
 - [further reading](#further-reading)
 
 # <a id="concepts" href="#concepts">#</a> concepts
@@ -31,8 +43,9 @@ The goal is to build *small programs that do one thing, do it well, and compose 
 Some examples:
 
 - [xhr](https://www.npmjs.com/package/xhr) - an XMLHttpRequest abstraction 
-- [domready](https://www.npmjs.com/package/domready) - modern DOM ready wrapper
-- [xtend](https://www.npmjs.com/package/xtend) - a function which merges objects
+- [seed-random](https://www.npmjs.com/package/seed-random) - deterministic seeded pseudo-random number generator
+- [object-assign](https://www.npmjs.com/package/object-assign) - a polyfill for `Object.assign`
+- [gl-matrix](https://www.npmjs.com/package/gl-matrix) - vector & matrix math, ideal for 2D and 3D applications
 
 There are a few different formats for authoring and publishing modules, such as ES6, AMD, and CommonJS. This article will focus on CommonJS (used by Node). 
 
@@ -110,7 +123,7 @@ For example, let's use Node's built-in [url](https://nodejs.org/api/url.html) mo
 Here we are *requiring* a built-in module called `url`. Require statements are part of Node, and look like this:
 
 ```js
-var url = require('url');
+const url = require('url');
 
 //... use url.parse()
 ```
@@ -190,9 +203,9 @@ type NUL > index.js
 Open the empty `index.js` file we created above in your favourite editor (like [SublimeText](http://www.sublimetext.com/)). Add the following and save it:
 
 ```js
-var url = require('url');
+const url = require('url');
 
-var parts = url.parse(window.location.href);
+const parts = url.parse(window.location.href);
 console.log(parts);
 ```
 
@@ -205,10 +218,10 @@ npm install budo -g
 Now start `budo` on our source file, like so:
 
 ```sh
-budo index.js
+budo index.js --live
 ```
 
-This will start a browserify development server on port `9966`. When `index.js` is requested, it will get "browserified" and transformed into something the browser can run. It will also serve you a basic `index.html` if you didn't write one, with a `<script>` tag for our `index.js`.
+This will start a browserify development server on port `9966`. When `index.js` is requested, it will get "browserified" and transformed into something the browser can run. It will also serve you a basic `index.html` if you didn't write one, with a `<script>` tag for our `index.js`. The `--live` flag will ensure the browser reloads when your JavaScript code changes.
 
 Now, when you open up `http://localhost:9966` in your browser and check the DevTools console, you'll see the Node code working as expected!
 
@@ -228,13 +241,13 @@ This will add the module into a folder called `node_modules` in our current dire
 
 ```js
 //require the SVG helper module
-var create = require('svg-create-element');
+const create = require('svg-create-element');
 
 //create a SVG element
-var svg = create('svg');
+const svg = create('svg');
 
 //add a polyline
-var line = create('polyline', {
+const line = create('polyline', {
     stroke: 'orange',
     strokeWidth: 4,
     fill: 'transparent',
@@ -254,6 +267,13 @@ document.body.appendChild(svg);
 And now, when we refresh our `http://localhost:9966/` page, we will see a sweet 2D line!
 
 ![svg](http://i.imgur.com/2wKR8ZJ.png)
+
+# <a id="other-tools" href="#other-tools">#</a> other tools
+
+In this guide, we use Browserify and `require()` statements. This is perhaps one of the easiest and most "bare bones" way of using Node.js and npm modules within your frontend code. However, there are many other tools like Browserify that include more features, including supporting ES6 `import` and `export`, such as:
+
+- [Parcel](https://parceljs.org/) - a zero-config bundler and development server
+- [Webpack](https://webpack.js.org/) - a powerful bundler for modern JavaScript applications
 
 # <a id="further-reading" href="#further-reading">#</a> further reading
 
